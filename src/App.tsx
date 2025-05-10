@@ -5,11 +5,13 @@ import Header from './components/Header';
 import PhotoCarousel from './components/PhotoCarousel';
 import MusicPlayer from './components/MusicPlayer';
 import FloatingHearts from './components/FloatingHearts';
+import PasswordScreen from './components/PasswordScreen';
 import './App.css';
 
 function App() {
   const [showConfetti, setShowConfetti] = useState(true);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight
@@ -35,6 +37,10 @@ function App() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  if (!isAuthenticated) {
+    return <PasswordScreen onCorrectPassword={() => setIsAuthenticated(true)} />;
+  }
 
   return (
     <div 
