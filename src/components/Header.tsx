@@ -36,7 +36,7 @@ const Header = ({ name }: HeaderProps) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        Wishing you a day filled with love and joy ✨
+        Happy 23rd my sweet girl. I don't know where to start. There is so much I want to say. You deserve the world, but I'll give you the universe ✨
       </motion.p>
     </motion.header>
   );
